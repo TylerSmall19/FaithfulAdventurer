@@ -1,11 +1,12 @@
 $(function() {
-    console.log('Loaded!');
     $(document).on('keyup', keyHandler);
     $(document).on('mousedown', mouseHandler);
 });
 
 function mouseHandler(e) {
-    setCursorType('none');
+    if ($.inArray('hide-cursor', e.target.classList) > -1) {
+        setCursorType('none');
+    }
 }
 
 function keyHandler(e) {
